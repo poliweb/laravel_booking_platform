@@ -112,12 +112,6 @@ class PostController extends Controller
         // Получите актуальный список постов
         $posts = Post::all();
 
-        // return Inertia::render('Posts/Index', [
-        //     'posts' => Post::all(),
-        //     'flash' => [
-        //         'success' => 'Сообщение успешно удалено!',
-        //     ],
-        // ]);
         return redirect()->route('posts.index',['posts' => $posts,])->with('error', 'Сообщение успешно удалено!');
     }
 }
