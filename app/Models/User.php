@@ -9,14 +9,13 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
-    // // Константы ролей
-    // public const ROLE_ADMIN = 'admin';
-    // public const ROLE_MASTER = 'master';
-    // public const ROLE_CLIENT = 'client';
+    // Константы ролей
+    public const ROLE_ADMIN = 'admin';
+    public const ROLE_MASTER = 'master';
+    public const ROLE_CLIENT = 'client';
 
-    use HasRoles;
 
     /**
      * Массово заполняемые атрибуты.

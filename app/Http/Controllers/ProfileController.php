@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Spatie\Permission\Models\Role;
 
 class ProfileController extends Controller
 {
@@ -18,7 +19,13 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): Response
     {
+         // Загружаем пользователя с ролями
+        $user = $request->user()->load('roles');
+        // Для отладки, если нужно, проверим роли
+        // dd($user->roles);
+
         return Inertia::render('Profile/Edit', [
+            'user' => $user,  // передаем объект пользователя с ролями в шаблон
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => session('status'),
         ]);
