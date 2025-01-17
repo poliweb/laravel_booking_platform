@@ -40,6 +40,9 @@ Route::middleware(['auth', 'verified', 'check.admin.role'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
+        Route::get('/', function () {
+            return response()->json(['message' => 'Добро пожаловать, администратор!']);
+        })->name('dashboard');
         Route::get('/users', [UserManagementController::class, 'index'])->name('users');
         Route::post('/users/{user}/update-role', [UserManagementController::class, 'updateRole'])->name('users.update-role');
         Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');

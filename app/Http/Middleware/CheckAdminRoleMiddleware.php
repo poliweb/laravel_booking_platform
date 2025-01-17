@@ -9,11 +9,17 @@ class CheckAdminRoleMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->check() || auth()->user()->role !== 'admin') {
-            return redirect('/');
-            // abort(403);
-            // или redirect() если хотите перенаправить
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            return $next($request);
         }
+
+        return abort(403, 'Доступ запрещён');
+
+        // if (!auth()->check() || auth()->user()->role !== 'admin') {
+        //     return redirect('/');
+        //     // abort(403);
+        //     // или redirect() если хотите перенаправить
+        // }
 
         return $next($request);
     }
