@@ -1,4 +1,5 @@
 <template>
+    <Head :title="post.title" />
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-col">
             <div class="lg:w-4/6 mx-auto">
@@ -41,7 +42,7 @@
 <script setup>
 import DefaultLayout from '@/Layouts/DefoultLayout.vue';
 import ButtonSecondary from '@/Components/Button/Secondary.vue'
-import { Link } from '@inertiajs/vue3'
+import { Link, Head } from '@inertiajs/vue3'
 import { Icon } from "@iconify/vue";
 
 defineOptions({ layout: DefaultLayout })

@@ -1,4 +1,5 @@
 <template>
+    <Head title="Список постов" />
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
             <Link v-if="$page.props.auth.user && $page.props.auth.user.role === 'admin'" :href="route('posts.create')"
@@ -100,7 +101,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { Icon } from "@iconify/vue";
-import { usePage, Link, router } from "@inertiajs/vue3";
+import { usePage, Link, Head, router } from "@inertiajs/vue3";
 import DefaultLayout from '@/Layouts/DefoultLayout.vue';
 import ButtonSecondary from '@/Components/Button/Secondary.vue';
 import ModalAlert from '@/Components/Modal.vue'
