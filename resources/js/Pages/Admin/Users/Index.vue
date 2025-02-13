@@ -8,7 +8,7 @@
                 </h2>
         </template>
         <div class="container  px-4 py-4 mx-auto overflow-x-auto ">
-            <div class="inline-block min-w-full overflow-hidden rounded-lg shadow  bg-gray-100  dark:bg-gray-800 p-4">
+            <div class="inline-block min-w-full overflow-hidden rounded-lg shadow-sm  bg-gray-100  dark:bg-gray-800 p-4">
                 <table class="min-w-full leading-normal">
                     <thead>
                         <tr>
@@ -34,7 +34,7 @@
                         <tr v-for="user in filteredUsers" :key="user.id">
                             <td class="px-5 py-5 text-sm  border-b border-gray-200">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-10 h-10">
+                                    <div class="shrink-0 w-10 h-10">
                                         <img class="w-full h-full rounded-full"
                                             src="https://api.dicebear.com/9.x/adventurer/svg?seed=Avery"
                                             alt="profile pic">

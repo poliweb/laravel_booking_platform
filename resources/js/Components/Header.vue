@@ -16,7 +16,7 @@
             <div v-if="canLogin" class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
                 <template v-if="$page.props.auth.user">
                     <Link :href="route('dashboard')"
-                        class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
+                        class="flex items-center gap-2 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
                         <Icon icon="guidance:office-pod" class="w-5 h-5" /> Личный кабинет
                     </Link>
 
@@ -24,12 +24,12 @@
                 </template>
                 <template v-else>
                     <Link :href="route('login')"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
                     Войти
                     </Link>
 
                     <Link v-if="canRegister" :href="route('register')"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
                     Регистрация
                     </Link>
                 </template>
@@ -108,12 +108,12 @@
                 </template>
                 <template v-else>
                     <ResponsiveNavLink :href="route('login')"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
                         Войти
                     </ResponsiveNavLink>
 
                     <ResponsiveNavLink v-if="canRegister" :href="route('register')"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-pink-500">
                         Регистрация
                     </ResponsiveNavLink>
                 </template>
@@ -150,19 +150,13 @@ defineProps({
 });
 
 function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
+    document.getElementById('screenshot-container')?.classList.add('hidden!');
+    document.getElementById('docs-card')?.classList.add('row-span-1!');
+    document.getElementById('docs-card-content')?.classList.add('flex-row!');
+    document.getElementById('background')?.classList.add('hidden!');
 }
 </script>
 
 <style scoped>
-.noActive {
-    @apply hover:text-pink-500 dark:text-gray-300 dark:hover:text-pink-500/80;
-}
 
-.Active {
-    @apply text-pink-500 font-bold hover:text-pink-500;
-}
 </style>

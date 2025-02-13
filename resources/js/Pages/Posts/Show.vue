@@ -14,7 +14,7 @@
 
                         <div class="flex flex-col items-center justify-center">
                             <h2 class="font-medium title-font mt-4 text-center text-gray-900 dark:text-gray-300 text-3xl">{{ post.title }}</h2>
-                            <div class="w-12 h-1 bg-pink-500 rounded mt-2 mb-4"></div>
+                            <div class="w-12 h-1 bg-pink-500 rounded-sm mt-2 mb-4"></div>
                             <p class="text-base text-center  dark:text-gray-400">
                                 {{ post.description }}
                             </p>

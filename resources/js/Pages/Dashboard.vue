@@ -29,7 +29,7 @@ defineProps({ user: Object })
 
         <div class="py-12">
             <div class="container mx-auto px-4 sm:px-5">
-                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
+                <div class="overflow-hidden bg-white shadow-xs sm:rounded-lg dark:bg-gray-800">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         You're logged in!
                     </div>
